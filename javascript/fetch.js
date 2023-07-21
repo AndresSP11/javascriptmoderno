@@ -3,10 +3,14 @@ console.log("Bienvenido")
 const consultarAPI= ()=>{
     fetch(url)
         .then((respuesta)=>{
-            return respuesta.json
+            return(respuesta.json());
         })
         .then( resultado=>{
-            console.log(resultado);
+            resultado.forEach(element => {
+                if(element.postId==1){
+                    console.log(element);
+                }
+            });
         })
         .catch((error)=>{
             console.log(error);
